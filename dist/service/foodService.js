@@ -8,9 +8,14 @@ class foodService {
     getById(_id) {
         return foodRespository_1.default.findById(_id);
     }
-    create() {
+    create(food) {
+        return foodRespository_1.default.create(food);
     }
-    update() {
+    update(_id, food) {
+        return foodRespository_1.default.findByIdAndUpdate(_id, food);
+    }
+    delete(_id) {
+        return foodRespository_1.default.findByIdAndRemove(_id);
     }
 }
 exports.default = new foodService();

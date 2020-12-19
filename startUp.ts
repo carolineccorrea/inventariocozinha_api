@@ -1,5 +1,6 @@
 import * as express from 'express'
 import Db from './infra/db';
+import foodController from './controller/foodController'
 import * as bodyParser from 'body-parser';
 
 class startUp {
@@ -21,9 +22,13 @@ class startUp {
     }
 
     routes() {
-        this.app.route("/").get((req, res) => {
-            res.send({ teste: 'ok' })
-        })
+        //rotas
+        this.app.route("/api/v1/food").get(foodController.get)
+        this.app.route("/api/v1/food/:id").get(foodController.getById)
+        this.app.route("/api/v1/food").post(foodController.create)
+        this.app.route("/api/v1/food/:id").put(foodController.update)
+        this.app.route("/api/v1/food/:id").delete(foodController.delete)
+
     }
 }
 
