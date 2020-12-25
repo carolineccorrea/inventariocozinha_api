@@ -7,10 +7,10 @@ const bodyParser = require("body-parser");
 class startUp {
     constructor() {
         this.app = express();
-        this.routes();
-        this.middler();
-        this._db = new db_1.default;
+        this._db = new db_1.default();
         this._db.createConnection();
+        this.middler();
+        this.routes();
     }
     middler() {
         this.app.use(bodyParser.json());

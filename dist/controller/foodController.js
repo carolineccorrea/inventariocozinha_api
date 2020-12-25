@@ -23,7 +23,7 @@ class FoodController {
     create(req, res) {
         let vm = req.body;
         foodService_1.default.create(vm)
-            .then(food => helper_1.default.sendResponse(res, HttpStatus.OK, "Alimento cadastrado com sucesso"))
+            .then(food => helper_1.default.sendResponse(res, HttpStatus.OK, food))
             .catch(error => console.error.bind(console, `Erro ${error}`));
     }
     update(req, res) {

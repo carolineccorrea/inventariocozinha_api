@@ -10,10 +10,11 @@ class startUp {
 
     constructor() {
         this.app = express();
-        this.routes();
-        this.middler();
-        this._db = new Db;
+        this._db = new Db();
         this._db.createConnection();
+        this.middler();
+        this.routes();
+        
     }
 
     middler() {
