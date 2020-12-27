@@ -2,24 +2,24 @@ import foodRepository from '../repository/foodRespository'
 
 class foodService {
 
-    get() {
-        return foodRepository.find({})
+    async get() {
+        return await foodRepository.find({})
     }
 
-    getById(_id) {
-        return foodRepository.findById(_id)
+    async getById(_id) {
+        return await foodRepository.findById(_id)
     }
 
-    create(food) {
-        return foodRepository.create(food)
+    async create(food) {
+        return await foodRepository.create(food)
     }
 
-    update(_id, food) {
-        return foodRepository.findByIdAndUpdate(_id, food)
+    async update(_id, food) {
+        return await foodRepository.findByIdAndUpdate(_id, food)
     }
 
-    delete(_id) {
-        return foodRepository.findByIdAndRemove(_id)
+    async delete(_id) {
+        return await foodRepository.findByIdAndRemove(_id)
     }
 }
 
